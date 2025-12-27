@@ -6,7 +6,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class TodoDataRepository(private val dao: TodoDao): TodoRepository {
-    override suspend fun getAllTodos(): Flow<List<Todo>> {
+    override fun getAllTodos(): Flow<List<Todo>> {
         return dao.getAllTodos().map { entities ->
             entities.map { entity ->
                 Todo(
